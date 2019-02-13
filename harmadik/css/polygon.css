@@ -1,13 +1,49 @@
-/* @import url('https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy:400,400i&subset=latin-ext'); */
-@import url('https://fonts.typotheque.com/WF-000099-008762.css');
+@font-face { font-family: 'Brioni Text Regular'; src: url('https://www.typotheque.com/data/webfonts/OTFtest/BrioniTextStd-Regular.woff') format('woff'); }
+@font-face { font-family: 'Brioni Pro Regular'; src: url('../font/BrioniPro-Regular.otf'); }
+@font-face { font-family: 'Brioni Pro Bold'; src: url('../font/BrioniPro-Bold.otf'); }
+/* @import url('https://fonts.typotheque.com/WF-000099-008762.css'); */
 /*@import url('https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy:400,400i');*/
 
-.smcp {
-    font-family: 'Brioni Text Regular 3', serif;
-    font-variant-caps: small-caps;
+h1 {
     font-feature-settings: 'smcp' on, 'kern' on, 'liga' on;
-    font-weight: normal;
+    letter-spacing: 4px;
+    color:rgba(0,0,0,1);
+    text-shadow:rgba(0,0,0,0.33) 3px 3px 15px;
+/*    text-transform: uppercase; */
+/*     font-family: verdana; */
+    color: #f5f5f5;
+/*    text-shadow:
+    1px 8px 6px rgba(16,16,16,0.2),
+    1px 12px 10px rgba(16,16,16,0.1),
+    1px 15px 35px rgba(16,16,16,0.1),
+    1px 20px 60px rgba(16,16,16,0.2); */
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    font-weight: bold;
 /*    font-variant: small-caps; */
+}
+
+h1 {
+    transform-style: preserve-3d;
+    transform: perspective(1200px) translateZ(0px);
+    transition: all 3s ease-in-out;
+}
+
+@keyframes rotate-h1 {
+        0%   { transform: perspective(1200px) translateZ(0px); }
+        100% { transform: perspective(1200px) translateZ(15px); }
+}
+
+.step.active h1 {
+    animation: rotate-h1 3s infinite alternate ease-in-out;
+}
+
+h1 .short {
+    text-transform: lowercase;
+    display: inline-block;
+    font-weight: normal;
+    font-size: 0.27em;
+    transform: translateZ(-50px);
 }
 
 /* @import url(http://fonts.googleapis.com/css?family=Droid+Sans:300,400,700); */
@@ -37,7 +73,9 @@ footer, header, hgroup, menu, nav, section {
   display: block; }
 
 body {
-  line-height: 1; }
+  font-family: 'Brioni Pro Bold', serif;
+  line-height: 1;
+}
 
 blockquote, q {
   quotes: none; }
@@ -66,30 +104,26 @@ i, em {
   position: relative;
   width: 900px;
   height: 700px;
-  border: 3px solid #333;
+/*  border: 3px solid #333; */
   padding: 0px;
   margin: 20px 40px 20px 40px;
-  line-height: 700px;
-  font-size: 75px;
+/*  line-height: 700px; */
+  font-size: 7em;
   font-weight: 400;
   text-align: center;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  -o-box-sizing: border-box;
   box-sizing: border-box; }
 
 .impress-enabled .step {
   margin: 0;
-  opacity: 0.2;
-  -webkit-transition: opacity 1s;
-  -moz-transition: opacity 1s;
-  -ms-transition: opacity 1s;
-  -o-transition: opacity 1s;
-  transition: opacity 1s; }
+  opacity: 1;
+  transition: opacity 1s; 
+  transform: translateZ(-150px);
+}
 
 .impress-enabled .step.active {
-  opacity: 1; }
+  opacity: 1; 
+  transform: translateZ(0px);
+}
 
 #overview {
   display: none; }
