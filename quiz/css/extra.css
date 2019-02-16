@@ -1,0 +1,218 @@
+@font-face { font-family: 'Brioni Pro Regular'; src: url('../font/BrioniPro-Regular.otf'); }
+@font-face { font-family: 'Brioni Pro Bold'; src: url('../font/BrioniPro-Bold.otf'); }
+
+@font-face { font-family: 'Alegreya Regular'; src: url('../font/Alegreya-Regular.ttf'); }
+@font-face { font-family: 'Alegreya Italic'; src: url('../font/Alegreya-Italic.ttf'); }
+@font-face { font-family: 'Alegreya ExtraBold'; src: url('../font/Alegreya-ExtraBold.ttf'); }
+@font-face { font-family: 'Alegreya Sans Light'; src: url('../font/AlegreyaSans-Light.ttf'); }
+@font-face { font-family: 'Alegreya Sans ExtraBold'; src: url('../font/AlegreyaSans-ExtraBold.ttf'); }
+
+@font-face { font-family: 'Cabin Regular'; src: url('../font/Cabin-Regular.ttf'); }
+@font-face { font-family: 'Cabin Medium'; src: url('../font/Cabin-Medium.ttf'); }
+@font-face { font-family: 'Cabin Bold'; src: url('../font/Cabin-Bold.ttf'); }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, .menu ul, menu .li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+/*  font: inherit; */
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  font-family: 'Alegreya Regular', serif;
+}
+
+blockquote, q {
+  quotes: none; }
+  blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+b, strong {
+  font-weight: bold; }
+
+i, em {
+  font-style: Bold }
+
+body {
+  background: gray url('images/symphony.png') repeat 0 0;
+  font-size: 28pt;
+  min-height: 740px;
+/*  -webkit-animation: slide 60s linear infinite; */
+}
+
+body:before {
+content: "";
+position: absolute;
+width: 200%;
+height: 200%;
+top: -50%;
+left: -50%;
+z-index: -1;
+background: url('images/symphony.png') 0 0 repeat;
+transform: rotate(0deg);
+-webkit-animation: spin 240s linear infinite;
+}
+
+@-webkit-keyframes slide {
+    from { background-position: 0 0; }
+    to { background-position: -400px 0; }
+}
+
+@-webkit-keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+h1 {
+    font-family: 'Brioni Pro Bold', serif;
+    font-feature-settings: 'smcp' on, 'kern' on, 'liga' on;
+    font-size: 56pt;
+    letter-spacing: 4px;
+    text-shadow:rgba(0,0,0,0.33) 3px 3px 15px;
+    color: #f5f5f5;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    text-align: center;
+    font-weight: bold;
+}
+
+h2 {
+    font-family: 'Alegreya Regular', serif;
+    font-weight: normal;
+    font-size: 36pt;
+}
+
+ol {
+    counter-reset: li;
+    list-style: none;
+    font-size: 22pt;
+    font-family: 'Alegreya Sans ExtraBold';
+    padding: 0;
+/*    margin-bottom: 4em; */
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+
+li {
+    position: relative;
+    display: block;
+    padding: .4em 2em .4em 2em;
+    margin: .5em 0;
+    background: rgba(0,0,0,0.15);
+    color: #000;
+    text-decoration: none;
+    border-radius: .3em;
+    transition: all .3s ease-out;   
+}
+
+li:before{
+    content: counter(li, upper-alpha);
+    counter-increment: li;
+    position: absolute; 
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: #87ceeb;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    border: .3em solid #f0f0f0;
+    text-align: center;
+    font-family: 'Alegreya Sans Light';
+    border-radius: 2em;
+    transition: all .3s ease-out;
+}
+
+@keyframes pulse {
+        0%   { transform: perspective(1200px) translateZ(0px); }
+        100% { transform: perspective(1200px) translateZ(25px); }
+}
+
+.step.active h1 {
+    animation: pulse 3s infinite alternate ease-in-out;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  width: 900px;
+/*  height: 700px; */
+  height: 100%;
+  padding: 0px;
+  font-size: 1em;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+.stepinner {
+	margin: auto;
+	max-width: 900px;
+}
+
+.small {
+  font-size: 21pt;
+}
+
+.impress-enabled .step {
+  margin: 0;
+  opacity: 0.4;
+  transition: opacity 1s; 
+  transform: translateZ(-150px);
+}
+
+.impress-enabled .step.active {
+  opacity: 1; 
+  transform: translateZ(0px);
+}
+
+#overview {
+  display: none; }
+
+.impress-on-overview .step {
+  opacity: 1;
+  cursor: pointer; }
+
+div.columns {
+  display: flex;
+  align-items: center;
+}
+
+.columns ol {
+  flex: 1 1 auto;
+}
+
+.columns img {
+    max-width: 440px;
+    max-height: 280px;
+    object-fit: contain;
+    margin: 1em;
+}
+
+.centered {
+  margin:.5em;
+  text-align: center;
+}

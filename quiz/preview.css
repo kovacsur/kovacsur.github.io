@@ -1,0 +1,38 @@
+body {
+  -webkit-animation: none;
+}
+
+body:before {
+  display: none;
+  background: none;
+  -webkit-animation: none;
+}
+
+h1 {
+    text-shadow: none;
+    transform-style: preserve-3d;
+    transform: perspective(1200px) translateZ(0px);
+    transition: none;
+}
+
+.step.active h1 {
+    animation: none;
+}
+
+.impress-enabled .step {
+  margin: 0;
+  opacity: 1;
+  transition: none; 
+}
+
+.impress-enabled .step.active {
+  opacity: 1; 
+}
+
+#overview {
+  display: none;
+}
+
+.impress-on-overview .step {
+  opacity: 1;
+}
